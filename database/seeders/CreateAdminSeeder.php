@@ -16,7 +16,7 @@ class CreateAdminSeeder extends Seeder
      */
     public function run()
     {
-        Role::create(['name' => 'admin', 'guard_name' => 'web']);
+        Role::create(['name' => 'admin', 'label' => 'Admin','guard_name' => 'web']);
 
         $user = User::factory()->create([
             'name' => 'Admin',
