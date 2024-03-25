@@ -56,6 +56,7 @@ Route::controller(RoleController::class)
         Route::get('/create', 'create')->name('create');
         Route::post('/', 'store')->name('store');
         Route::post('/permission', 'add_permission')->name('add-permission');
+        Route::post('/permission/{role_id}/grant', 'grant_permission')->name('grant-permission');
     });
 
 Route::controller(ClientController::class)

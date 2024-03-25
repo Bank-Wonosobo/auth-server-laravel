@@ -5,27 +5,7 @@
 @section('content')
 <div class="row my-4">
     {{-- @can('add-role') --}}
-    <div class="col-md-7">
-        <div class="card border-0 shadow">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Tambah Role</h6>
-            </div>
-            <div class="card-body">
-            <form action="{{ route('roles.store') }}" method="POST">
-                @csrf
-                <div class="form-group">
-                    <label>Role Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Role Name">
-                </div>
-                <div class="form-group">
-                    <label>Label</label>
-                    <input type="text" name="label" class="form-control" placeholder="Label Role">
-                </div>
-                <button type="submit" class="btn btn-primary"> Tambah</button>
-            </form>
-            </div>
-        </div>
-    </div>
+    @include('admin.roles.add-role')
     <div class="col-md-5">
         <div class="card border-0 shadow">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -39,7 +19,7 @@
                     <input type="text" name="name" class="form-control" placeholder="Role Name">
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Hak Akses</label>
+                    <label class="form-label">Roles</label>
                     <select multiple name="roles[]" class="form-control select2" style="width: 100%;">
                         @foreach ($roles as $item)
                             <option value="{{ $item->id }}" class="font-weight-bold">{{ $item->name }}</option>
@@ -83,6 +63,10 @@
                                         @endforeach
                                     </td>
                                     <td>
+                                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#staticBackdrop{{ $item->id }}">
+                                            Grant Permission
+                                        </button>
+                                        @include('admin.roles.grant-permission')
                                         <a href="" class="btn btn-sm btn-danger">Hapus</a>
                                     </td>
                                 </tr>
@@ -124,6 +108,8 @@
         </div>
     </div>
 </div>
+
+
 @endsection
 
 @section('style')

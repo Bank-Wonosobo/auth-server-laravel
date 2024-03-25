@@ -41,7 +41,6 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`, `label`) VALUES
-(13, 'admin', 'web', '2024-03-05 23:36:51', '2024-03-05 23:36:51', 'Admin'),
 (14, 'direktur-utama', 'web', '2024-03-05 23:37:42', '2024-03-05 23:37:42', 'Direktur Utama'),
 (15, 'direktur-umum', 'web', '2024-03-05 23:38:02', '2024-03-05 23:38:02', 'Direktur Umum & Kepatuhan'),
 (16, 'pe', 'web', '2024-03-05 23:38:48', '2024-03-05 23:38:48', 'Pejabat Eksekutif'),
