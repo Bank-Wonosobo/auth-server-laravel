@@ -28,14 +28,14 @@
         <span>Keamanan</span></a>
 </li>
 
-{{-- @can('manage-user') --}}
+@can('bw:auth:user:manage')
 <!-- Nav Item - Tables -->
 <li class="nav-item">
     <a class="nav-link" href="{{ route('users.index') }}">
         <i class="fas fa-fw fa-users"></i>
         <span>User</span></a>
 </li>
-{{-- @endcan --}}
+@endcan
 
 {{-- @can('manage-role') --}}
 <li class="nav-item">
@@ -52,3 +52,9 @@
         <span>OAouth</span></a>
 </li>
 {{-- @endcan --}}
+
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('apps.index') }}">
+        <i class="fas fa-fw fa-desktop"></i>
+        <span>List App</span></a>
+</li>

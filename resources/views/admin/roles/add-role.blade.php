@@ -1,3 +1,4 @@
+@can('bw:auth:role:add')
 <div class="col-md-7">
     <div class="card border-0 shadow">
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -19,3 +20,5 @@
         </div>
     </div>
 </div>
+@endcan
+

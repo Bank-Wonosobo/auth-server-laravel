@@ -31,10 +31,10 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion ml-2" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex bg-white text-dark shadow-sm flex-column align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex text-white shadow-sm flex-column align-items-center justify-content-center" href="index.html">
                 {{-- <img src="{{ asset('/assets/auth/images/bg-01.png') }}" class="img-fluid" width="80px" alt=""> --}}
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-dollar-sign"></i>

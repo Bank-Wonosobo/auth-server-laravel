@@ -21,8 +21,8 @@ class RoleController extends Controller
 
     public function index()
     {
-        $roles = Role::all();
-        $permissions = Permission::all();
+        $roles = Role::orderBy('name', 'ASC')->get();
+        $permissions = Permission::orderBy('name', 'ASC')->get();
         $data = $this->roleRepository->getAllRoles();
         return view('admin.roles.index', compact('data', 'permissions', 'roles'));
     }

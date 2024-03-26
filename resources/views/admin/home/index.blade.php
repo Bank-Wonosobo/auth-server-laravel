@@ -28,26 +28,28 @@
 
     <div class="row">
 
-        {{-- @can('manage-ebfis') --}}
+        @foreach ($apps as $app)
+        @can($app->permission)
         <div class="col-xl-3 col-md-6 mb-4">
-            <a href="" class="text-decoration-none">
+            <a href="{{ $app->link }}" class="text-decoration-none">
                 <div class="card border-left-primary shadow-sm h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    Sistem Arsip</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">BW ARCHIVE</div>
+                                    {{ $app->name }}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ strtoupper($app->alias) }}</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-archive fa-2x text-gray-300"></i>
+                                <i class="{{ $app->icon }} fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </a>
         </div>
-        {{-- @endcan --}}
+        @endcan
+        @endforeach
 
         @can('manage-difisy')
         <div class="col-xl-3 col-md-6 mb-4">
