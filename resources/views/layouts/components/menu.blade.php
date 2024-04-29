@@ -37,24 +37,26 @@
 </li>
 @endcan
 
-{{-- @can('manage-role') --}}
+@can('bw:auth:manage-role')
 <li class="nav-item">
     <a class="nav-link" href="{{ route('roles.index') }}">
         <i class="fas fa-fw fa-user"></i>
         <span>Hak Akses</span></a>
 </li>
-{{-- @endcan
+@endcan
 
-@can('manage-oauth') --}}
+@can('bw:auth:manage-oauth')
 <li class="nav-item">
     <a class="nav-link" href="{{ route('clients.index') }}">
         <i class="fas fa-fw fa-desktop"></i>
         <span>OAouth</span></a>
 </li>
-{{-- @endcan --}}
+@endcan
 
+@can('bw:auth:manage-app')
 <li class="nav-item">
     <a class="nav-link" href="{{ route('apps.index') }}">
         <i class="fas fa-fw fa-desktop"></i>
         <span>List App</span></a>
 </li>
+@endcan
