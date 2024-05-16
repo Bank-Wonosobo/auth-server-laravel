@@ -46,7 +46,7 @@
           @foreach ($apps as $app)
           <!-- Sales Card -->
           <div class="col-xxl-4 col-md-6">
-            <a href="{{ $app->link }}" class="text-decoration-none">
+            <a href="{{ $app->link }}" class="text-decoration-none" target="_blank">
                 <div class="card card-custom info-card sales-card">
                   <div class="card-body mt-4">
                     <div class="d-flex align-items-center">
