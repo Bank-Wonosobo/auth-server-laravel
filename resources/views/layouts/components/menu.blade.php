@@ -16,16 +16,16 @@
       </a>
     </li>
 
+    @can('bw:auth:user:manage')
+
     <li class="nav-heading">User Management</li>
 
-    {{-- @can('bw:auth:user:manage') --}}
     <li class="nav-item ">
         <a href="{{ route('users.index') }}" class="nav-link {{ Route::is('clients.*') ? '' : 'collapsed' }}">
             <i class='bx bx-user-plus'></i>
           <span>User</span>
         </a>
     </li>
-    {{-- @endcan --}}
 
     <li class="nav-item ">
         <a href="{{ route('roles.index') }}" class="nav-link {{ Route::is('roles.*') ? '' : 'collapsed' }}">
@@ -33,6 +33,12 @@
             <span>Hak Akses</span>
         </a>
     </li>
+    @endcan
+
+
+    @can('bw:auth:user:oauth')
+
+    <li class="nav-heading">Client Management</li>
 
     <li class="nav-item ">
         <a href="{{ route('clients.index') }}" class="nav-link {{ Route::is('clients.*') ? '' : 'collapsed' }}">
@@ -40,6 +46,10 @@
             <span>Oauth Client</span>
         </a>
     </li>
+
+    @endcan
+
+    @can('bw:auth:manage-app')
 
     <li class="nav-heading">Pengaturan</li>
 
@@ -50,6 +60,7 @@
         </a>
     </li>
 
+    @endcan
     <li class="nav-heading">Lain-lain</li>
 
     <li class="nav-item">
