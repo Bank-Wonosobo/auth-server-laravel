@@ -1,8 +1,9 @@
 @extends('layouts.app')
+@section('title', 'Dashboard')
 
 @section('style')
     <style>
-        .card:hover {
+        .card-custom:hover {
             transform:translateY(-5px);
             box-shadow: 0px 7px 3px rgba(0, 0, 255, 0.2) !important;
 
@@ -14,114 +15,58 @@
 @endsection
 
 @section('content')
+<section class="section dashboard">
 
-    <div class="row d-flex justify-content-center align-items-center flex-column mt-5 bg-white">
-        <img src="{{ asset('/assets/auth/images/bg-01.png') }}" class="img-fluid rounded" width="350px" alt="image-profile">
-        <h5 class="font-weight-bold text-gray-900 mt-3">Selamat datang, {{ Auth::user()->name }}</h5>
-        <p>Manage your info, privacy, and security to make Banking work better for you.</p>
-    </div>
-    <!-- Page Heading -->
-    <h4 class="mb-4 mt-3 text-gray-900">
-        <i class="fas fa-fw fa-desktop"></i>
-        Daftar Aplikasi Tersedia
-    </h4>
-
-    <div class="row">
-
-        @foreach ($apps as $app)
-        {{-- @can($app->permission) --}}
-        <div class="col-xl-3 col-md-6 mb-4">
-            <a href="{{ $app->link }}" class="text-decoration-none">
-                <div class="card border-left-primary shadow-sm h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    {{ $app->name }}</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ strtoupper($app->alias) }}</div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="{{ $app->icon }} fa-2x text-gray-300"></i>
-                            </div>
+<div class="row mb-3">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="row d-flex justify-content-center align-items-center flex-column bg-white">
+                            <img src="{{ asset('/assets/admin/img/bg-01.png') }}" class="img-fluid rounded"  alt="image-profile">
                         </div>
                     </div>
-                </div>
-            </a>
-        </div>
-        {{-- @endcan --}}
-        @endforeach
-
-        @can('manage-difisy')
-        <div class="col-xl-3 col-md-6 mb-4">
-            <a href="https://difisy.feb-unsiq.ac.id/dashboard" class="nav-link card-custom" target="_blank">
-                <div class="card border-left-primary shadow h-100 py-2" style="width: 18rem;">
-                    <div class="card-body">
-                        <img src="{{ asset('/img/logo-difisy.jpg') }}" class="card-img-top py-2" alt="logo-difisy">
+                    <div class="col-lg-6">
+                        <h5 class="mt-3 card-title">Selamat datang, {{ Auth::user()->name }}</h5>
+                        <p>Manage your archive to make Banking work better for you,  and happy working :)</p>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
-        @endcan
-
-        @can('manage-digilib')
-        <div class="col-xl-3 col-md-6 mb-4">
-            <a href="https://digilib.feb-unsiq.ac.id/admin/dashboard" class="nav-link card-custom" target="_blank">
-                <div class="card border-left-primary shadow h-100 py-2" style="width: 18rem;">
-                    <div class="card-body">
-                        <img src="{{ asset('/img/logo-digilib.jpg') }}" class="card-img-top py-2" alt="logo-digilib">
-                    </div>
-                </div>
-            </a>
-        </div>
-        @endcan
-
-        @can('manage-diaregsy')
-        <div class="col-xl-3 col-md-6 mb-4">
-            <a href="https://diaregsy.feb-unsiq.ac.id/admin/dashboard" class="nav-link card-custom" target="_blank">
-                <div class="card border-left-primary shadow h-100 py-2" style="width: 18rem;">
-                    <div class="card-body">
-                        <img src="{{ asset('/img/logo-diaregsi.jpg') }}"class="card-img-top py-2" alt="logo-diaregsi">
-                    </div>
-                </div>
-            </a>
-        </div>
-        @endcan
-
-        @can('manage-pedoma')
-        <div class="col-xl-3 col-md-6 mb-4">
-            <a href="https://pedoma.feb-unsiq.ac.id/admin/auth" class="nav-link card-custom" target="_blank">
-                <div class="card border-left-primary shadow h-100 py-2" style="width: 18rem;">
-                    <div class="card-body">
-                        <img src="{{ asset('/img/logo-pedoma.jpg') }}" class="card-img-top py-2" alt="logo-pedoma">
-                    </div>
-                </div>
-            </a>
-        </div>
-        @endcan
-
-        @can('manage-spmi')
-        <div class="col-xl-3 col-md-6 mb-4">
-            <a href="https://espmi.feb-unsiq.ac.id/home" class="nav-link card-custom" target="_blank">
-                <div class="card border-left-primary shadow h-100 py-2" style="width: 18rem;">
-                    <div class="card-body">
-                        <img src="{{ asset('/img/logo-spmi.jpg') }}" class="card-img-top py-2" alt="logo-spmi">
-                    </div>
-                </div>
-            </a>
-        </div>
-        @endcan
-
-        @can('manage-repository')
-        <div class="col-xl-3 col-md-6 mb-4">
-            <a href="https://repository.feb-unsiq.ac.id" class="nav-link card-custom" target="_blank">
-                <div class="card border-left-primary shadow h-100 py-2" style="width: 18rem;">
-                    <div class="card-body">
-                        <img src="{{ asset('/img/logo-repository.png') }}" class="card-img-top py-2" alt="logo-spmi">
-                    </div>
-                </div>
-            </a>
-        </div>
-        @endcan
     </div>
+</div>
+<div class="row">
+<!-- Right side columns -->
+<div class="col-lg-12">
+      <!-- Left side columns -->
+      <div class="col-lg-8">
+        <div class="row">
 
+          @foreach ($apps as $app)
+          <!-- Sales Card -->
+          <div class="col-xxl-4 col-md-6">
+            <a href="{{ $app->link }}" class="text-decoration-none">
+                <div class="card card-custom info-card sales-card">
+                  <div class="card-body mt-4">
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-archive"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>{{ $app->alias}}</h6>
+                        <span class="text-success small pt-1 fw-bold">{{ $app->name }}</span>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </a>
+          </div>
+          @endforeach
+
+        </div>
+      </div><!-- End Left side columns -->
+    </div>
+</section>
 @endsection
