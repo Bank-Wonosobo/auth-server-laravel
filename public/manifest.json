@@ -1,0 +1,17 @@
+{
+    "name": "BW WEB APPS",
+    "short_name": "BWAPPS",
+    "start_url": "/index.php",
+    "background_color": "#fff",
+    "description": "Bawon Website Apps",
+    "display": "fullscreen",
+    "theme_color": "#fff",
+    "icons": [
+        {
+            "src": "bg-01.PNG",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

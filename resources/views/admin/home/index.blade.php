@@ -29,7 +29,7 @@
     <div class="row">
 
         @foreach ($apps as $app)
-        @can($app->permission)
+        {{-- @can($app->permission) --}}
         <div class="col-xl-3 col-md-6 mb-4">
             <a href="{{ $app->link }}" class="text-decoration-none">
                 <div class="card border-left-primary shadow-sm h-100 py-2">
@@ -48,7 +48,7 @@
                 </div>
             </a>
         </div>
-        @endcan
+        {{-- @endcan --}}
         @endforeach
 
         @can('manage-difisy')
